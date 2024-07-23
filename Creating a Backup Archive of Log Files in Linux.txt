@@ -1,0 +1,27 @@
+As a system administrator responsible for managing log files on a Linux server, you need to create a backup archive of log files to ensure data integrity and facilitate easy retrieval in case of system issues.
+
+Navigate to the log directory: cd /var/log
+
+View the contents of the directory to identify the log files to include in the backup archive: ls -ltr | less. Press 'q' to quit.
+
+Identify the log file(s) for backup. Let's choose the kern.log file for this exercise: ls -ltr kern.log
+
+Create a tar archive of the log files: sudo tar -cvf log_files_backup.tar kern.log*
+
+Verify that the archive has been created: ls -ltr log_files_backup.tar
+
+Create a directory for storing the backup archive in the temporary location: mkdir /tmp/backup
+
+Move the created archive file to the backup directory: sudo mv log_files_backup.tar /tmp/backup
+
+Navigate to the backup directory and list the contents to confirm the presence of the archive: cd /tmp/backup;
+
+ls -ltr
+
+View the contents of the archive file to ensure all desired files are included: tar -tf log_files_backup.tar.
+
+Your backup archive of boot logs is now ready for safekeeping or further distribution as needed.
+
+Run this command : echo "You are making great progress on your learning journey! Keep up the fantastic work!"
+
+In this exercise, we've created an archive named log_files_backup.tar containing the kern.log file.Typically, log rotation results in multiple log files, but in this platform, each log file consists of only one file, as observed when running the command ls -ltr | less. In real-world scenarios, the archive would include multiple log files capturing system activity over time.

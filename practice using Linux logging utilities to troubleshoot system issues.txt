@@ -1,0 +1,30 @@
+As a DevOps engineer, you begin by investigating potential boot issues that might be affecting the deployment of the critical microservice.
+
+Step 1: Investigating Boot Issues
+
+Access the servers hosting the microservices.
+
+Run the command to display messages from the last boot: journalctl -b
+
+Determine how many boot logs are available on the system: journalctl --list-boots
+
+Step 2: Monitoring System Services
+
+Next, you focus on monitoring system services, including the SSH service unit, to ensure smooth operation and identify any anomalies.
+
+Display messages related to the SSH service unit: journalctl _SYSTEMD_UNIT=sshd.service
+
+(in this particular server instance, there are no recent entries related to the sshd.service unit in the journal logs. However, the absence of entries in this specific server doesn't mean the command won't show any output in other servers or instances.)
+
+Retrieve emergency messages from the logs: journalctl -p emerg..err
+
+(when using the command journalctl -p emerg..err, it's expected that the output might vary depending on the current system state and recent events. If the command returns "No entries," it indicates that there are no emergency-level messages (severity level emerg or err) in the journal logs during the time frame being queried.)
+
+Step 3: Making Journal Logs Persistent
+
+To facilitate ongoing monitoring and troubleshooting, you make the journal logs persistent and observe them in real-time as system actions are performed.
+
+Make the journal logs persistent and jump to the end of the journal: journalctl -ef
+
+Step 4. Run command : echo "The best among you are those who have the best manners and character." Prophet Muhammad (peace be upon him)"
+

@@ -1,0 +1,31 @@
+You've recently joined a dynamic DevOps team responsible for managing multiple projects simultaneously. As the team expands, ensuring proper access control to project files becomes crucial to maintain security and collaboration. To facilitate this, you decide to explore and compare both the symbolic and numeric methods for changing permissions in Linux.
+
+Step 1: Navigate to the home/user directory and locate the 'devops_projects' directory.
+
+Step 2: Change directory to the 'devops_projects' directory. List this directory and observe two subdirectories named "GalacticForge" and "StellarSprint".
+
+Ensure that files named 'cosmic_security_manual.txt' exist in the 'GalacticForge' project and 'astro_permissions_script.txt' in the 'StellarSprint' project.
+
+Step 3: Create three groups: developers, testers, and administrators.
+
+Step 4: Assign permissions using the Symbolic Method for the 'GalacticForge' project:
+
+Grant read and write permissions to developers (owner/user). Grant read-only permissions to testers (group). Deny all permissions to administrators (others). Apply these permissions to project files using the symbolic method (chmod with symbolic notation).
+
+Step 5: Assign permissions using the Numeric Method for the 'StellarSprint' project:
+
+Set permissions such that the owner (developers) has full access (read, write, execute). The group (testers) has read and execute permissions. Others (administrators) have read-only permissions. Apply these permissions to project files using the numeric method (chmod with octal notation).
+
+Use:
+
+'r' (read) has a value of 4
+
+'w' (write) has a value of 2
+
+'x' (execute) has a value of 1
+
+Step 6: List the contents of each directory to view them with permissions:
+
+ls -l /home/user/devops_projects/GalacticForge | awk '{print $1, $9}' . 
+
+ls -l /home/user/devops_projects/StellarSprint | awk '{print $1, $9}'

@@ -1,0 +1,26 @@
+Process control with signals provides a flexible mechanism for managing processes in a Linux environment, allowing for inter-process communication, error handling, and graceful termination. Understanding how to use signals effectively is essential for developing robust and responsive applications in Linux.
+
+Let's dive into it!
+
+Starting a Process: Begin by running a process in the foreground using the sleep command: sleep 23455. Press Ctrl+Z to stop.
+
+Exploring Available Signals: While the sleep process is stopped, let's check the available signals in the same terminal using the kill -l command. Look for the signal number corresponding to SIGTSTP.
+
+Suspending the Process: To suspend the running process, press Ctrl+Z. This will send the SIGTSTP signal to the process, causing it to pause. You'll notice its status changes from running to stopped.
+
+Checking Process Status: Verify the status of the stopped process using the jobs command. You'll see that the process is now stopped.
+
+Resuming the Process: Resume the suspended process in the background using the bg command: bg
+
+Checking Process Status Again: Check the status of the running process using the jobs command again. You'll see that the process is now running in the background.
+
+Stopping the Background Process Again: To stop the background process again, you can use either Ctrl+Z or send a SIGTSTP signal explicitly using its signal number or name. For example: kill -SIGTSTP %1. Confirm that the process has been stopped by using the jobs command.
+
+Starting Another Process: Now, let's start another process in the background using the sleep command: sleep 12121 &
+
+Obtaining the PID of the Stopped Process (Optional): If you're curious, you can obtain the PID of the stopped process using the ps command: ps -C sleep
+
+Using SIGSTOP as an Alternative: If, for some reason, the SIGTSTP signal is not working properly or ignored by the command, you can use the SIGSTOP signal (signal #19) as a forceful alternative. Let's use it with the PID obtained in step 6: kill -SIGSTOP <PID>. Run the jobs command to see.
+
+And finally, run the 'pwd'command.
+

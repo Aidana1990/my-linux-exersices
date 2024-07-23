@@ -1,0 +1,20 @@
+You are a Linux system administrator responsible for backing up system configuration files located in the "/etc" directory. Your goal is to create a compressed backup of these files using the XZ compression method, which is renowned for its high compression ratio. However, you want to verify the effectiveness of XZ compression compared to other compression methods available in Linux.
+
+Run sudo su command
+
+Use the "tar" command to create a compressed archive of the "/etc" directory using XZ compression: tar -cvJf /root/etcbackup.tar.xz /etc
+
+This command will create a compressed archive named "etcbackup.tar.xz" in the "/root" directory, containing all the files and directories within "/etc".
+
+Wait for the compression process to complete. Note that XZ compression may take more time compared to other compression methods due to its high compression ratio.
+
+Once the compression is finished, cross-check the details of the compressed archive using the following commands:
+
+ls -ltr /root/etcbackup.tar.xz - lists detailed information about the compressed archive, including its size and modification time.
+
+du -sk /root/etcbackup.tar.xz - displays the disk usage of the compressed archive in kilobytes.
+
+Compare the size and compression ratio of the XZ-compressed archive with other compression methods you're familiar with (e.g., gzip, bzip2). You can explore additional options and compression methods by referring to the manual pages of the "tar" command: man tar
+
+List this newly compressed file with 'ls' command.
+

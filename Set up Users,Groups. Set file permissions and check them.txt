@@ -1,0 +1,70 @@
+The scenario involves a treasure hunt where adventurers need to collaborate while accessing crucial information stored in a shared directory.
+
+Create a directory named "shared_directory" by running: 'sudo mkdir /shared_directory'. Then, set permissions for all users to access this directory using: 'sudo chmod 777 /shared_directory' ( don't worry you'll cover it on the next lectures. Just for now run this command ).
+
+Set up Users and Groups:
+
+Create a group named "treasure_hunters".
+
+Create two users named "adventurer1" and "adventurer2" and add them to the "treasure_hunters" group.
+
+Commands: sudo useradd -m -G treasure_hunters adventurer1;
+
+sudo useradd -m -G treasure_hunters adventurer2
+
+Please use 'useradd' command , NOT 'adduser' command!
+
+The useradd command is used to create new user accounts in Unix-like operating systems.
+
+In this case, we're using it to create two new users: "adventurer1" and "adventurer2".
+
+The -m option ensures that a home directory is created for each new user. Without this option, the home directory would not be created by default.
+
+The -G option is used to add the new users to supplementary groups. Here, we're adding them to the "treasure_hunters" group.
+
+Difference between useradd and adduser:
+
+useradd is a lower-level command that directly modifies system files and directories to add new users. It requires manual specification of user attributes and settings, such as home directory and group membership.
+
+adduser, on the other hand, is a higher-level command that provides a more user-friendly and interactive interface for adding users. It automates several steps of the user creation process, such as home directory creation and password setting, making it more convenient, especially for less experienced users.
+
+In scenarios where precise control over user creation parameters is needed, or when scripting user management tasks, useradd is preferred. In contrast, adduser is chosen for its ease of use and automation features, particularly in interactive or less experienced user environments.
+
+Set passwords for the newly created users, we can use the passwd command:
+
+Commands: sudo passwd adventurer1;
+
+sudo passwd adventurer2
+
+Create Directory and File :
+
+Switch to user "adventurer1," navigate to the /shared_directory.
+
+Create a file named "treasure.txt" . Since adventurer1 creates this file, He is the Owner of this file.
+
+Use command 'cat > treasure.txt' and add this text to it: "The journey begins here. May this treasure guide us to glory and fortune!''. Once you've entered the text, press Ctrl+D to save and exit.
+
+T
+
+ype 'ls -ltr' to see this file with permissions. Analyze who is the owner of this file and what kind of permissions are for group members and others.
+
+Switch User and Check Permissions:
+
+Switch to user "adventurer2" and attempt to read the file. Since this user is part of the treasure_hunters group, he can read this file : cat /shared_directory/treasure.txt Run 'exit'.
+
+Now switch to adventurer1 and set this permission: 'sudo chmod 640 /shared_directory/treasure.txt' which removes permissions for Others.
+
+Then list the permissions of this file.
+
+Let's create another user named "adventurer3" without specifying the group for him.
+
+Change location to shared_directory and attempt to read the file. This setup ensures that "adventurer3" doesn't belong to the same group as "adventurer1" and "adventurer2" and thus should be denied access to the file.
+
+exit from this user.
+
+Check Permissions:
+
+Let's modify the timestamp for this file . Set it to April 25, 2024 . Run this command: sudo touch -t 202404250000.00 /shared_directory/treasure.txt
+
+And verify the modification: ls -ltr /shared_directory/treasure.txt
+

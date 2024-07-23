@@ -1,0 +1,54 @@
+In Unix-like operating systems such as Linux, processes are fundamental units of execution. Understanding how to manage processes is essential for system administrators, developers, and anyone working with Linux systems. The ps command, which stands for "process status," is a powerful tool used to view information about running processes.
+
+Run ps to list currently running processes.
+
+The output will display a list of processes running in the current terminal session.
+
+This command provides a basic overview of processes without detailed information.
+
+Run ps aux
+
+This command is useful for gaining an overview of all processes running on the system, including those not associated with the current terminal session.
+
+It provides detailed information about each process, such as user, PID, CPU and memory usage, etc.
+
+ps: Same as before, the command to list processes.
+
+aux: The options passed to ps.
+
+a: Shows processes of all users.
+
+u: Displays detailed information about each process.
+
+x: Includes processes not attached to a terminal.
+
+Run ps aux | less
+
+Together, ps aux provides a detailed list of all processes running on the system, including their user, CPU and memory usage, and other details.
+
+|: The pipe operator. It takes the output of the command on its left (ps aux) and passes it as input to the command on its right (less).
+
+less: less is a terminal pager program used to view the contents of a text file one screen at a time. In this case, it's used to paginate the output of ps aux.
+
+Run ps lax
+
+This command is used to display detailed information about all processes running on the system.
+
+l: Displays detailed information about each process.
+
+a: Shows processes of all users.
+
+x: Includes processes not attached to a terminal.
+
+The main difference between ps aux and ps lax lies in the order of options and the specific details they display.
+
+Now run this command on /home/user directory :
+
+echo '"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill' > motivation.txt
+
+cat motivation.txt
+
+And read this motivation with cat command. You should get this output :
+
+"Success is not final, failure is not fatal: It is the courage to continue that counts."- Winston Churchill
+

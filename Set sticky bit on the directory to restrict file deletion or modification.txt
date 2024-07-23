@@ -1,0 +1,23 @@
+Let's say you're managing a Linux server for a small software development team. The team collaborates on various projects, and there's a shared directory where they store project files. However, you want to ensure that while everyone can contribute to the directory by creating or modifying files, they should not be able to delete or modify files created by other team members.
+
+Step 1. Create the Shared Directory named /home/user/project_shared for storing project files.
+
+Step 2. Set Permissions: Initially, you grant read, write, and execute permissions to everyone for the shared directory. Run: chmod 777 /home/user/project_shared
+
+Step 3. Team Collaboration: Each team member, let's say Alice, Bob, and Charlie, have user accounts on the Linux server. Create users : alice, bob, and charlie using sudo . Set passwords to them.
+
+Then change directory to project_shared/.
+
+Apply Sticky Bit: Set the sticky bit on the shared directory to restrict file deletion or modification by users other than the owner using the syntax chmod +t /home/user/project_shared.
+
+Creating file: Switch to user Alice. Create a new file named analysis.py in the /home/user/project_shared directory for data analysis, setting the timestamp to '202405010000.00' (May 1, 2024).
+
+Modifying File: Switch to user Bob. Access the shared directory and attempt to modify the analysis.py file using vim or any other editor. Type some letters or text inside of this file. Save and exit. However, the system denies his attempt to write text, save, and quit. Exit without saving any changes to the file.
+
+Restriction on Deletion: Now switch to user Charlie. He attempts to delete the analysis.py file created by Alice. However, Charlie receives " a permission denied " error since he is not the owner of the file ,and the sticky bit prevents deletion by other users. The command : rm /home/user/project_shared/analysis.py
+
+Finally, list the file analysis.py with its permissions and ownership. Run: ls -l /home/user/project_shared
+
+Outcome:
+
+The sticky bit ensures that while multiple users can contribute to the shared directory, they cannot delete or modify files created by other users, promoting collaboration while maintaining data integrity.

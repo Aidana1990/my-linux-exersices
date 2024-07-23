@@ -1,0 +1,24 @@
+The touch command in Linux is a simple yet powerful tool used to create empty files and update file timestamps. While its primary purpose is to update file creation time, it also serves as a quick way to create new files if they don't exist.
+
+So, let's dive in and unleash the power of the touch command as we embark on this learning journey together!
+
+Craft an imaginative invitation for a pretend party!
+
+Task 1 :
+
+Step 1 : Create an empty file named "party_invitation.txt" in /home/user directory and run 'ls ' to see it.
+
+Step 2 : Now run 'ls -la [filename]' to see it's modification time.
+
+Task 2:
+
+Step 1 : Set this "party_invitation.txt" timestamp to a August 1st, 2024 15:30:45 . Let's imagine the party is a virtual coding carnival scheduled for August 1st, 2024 15:30:45 .
+
+Step 2: Check if it's modified by running 'ls -la' and filename .
+
+Use: -t option to set future date and time;
+
+-m option to change modification time.
+
+Syntax : touch -m -t 202408011530.45 FILE...
+

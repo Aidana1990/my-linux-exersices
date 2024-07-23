@@ -1,0 +1,64 @@
+In this exercise, you'll explore the world of signal handling in Linux, a crucial aspect of process management. Signals are software interrupts used to communicate with processes, enabling tasks like pausing, resuming, or terminating processes.
+
+Run the kill -l command to list all available signals and their corresponding numbers
+
+Starting a Stopped Process with SIGCONT:
+
+Begin by creating a couple of processes that can be stopped. Run: sleep 21212 and Run CTRL+Z to stop it. , and then run in the backgound :
+
+sleep 23232 & .
+
+Use the jobs command to view the stopped processes.
+
+Choose one the stopped processe (e.g., job %1).
+
+Resume the stopped process using the kill command with SIGCONT: kill -SIGCONT %1
+
+Verify that the process has resumed running in the background with the jobs command.
+
+3. Terminating a Running Process with SIGTERM:
+
+Identify the PID of the running process using the ps -C sleep command.
+
+Gracefully terminate the running process using the kill command with SIGTERM: kill -SIGTERM <PID>.
+
+Verify that the process has been terminated by checking with the jobs command.
+
+4. Forcibly Terminating a Process with SIGKILL:
+
+If the process doesn't terminate with SIGTERM, attempt using SIGKILL.
+
+Identify the PID of the process using the ps -C sleep command again.
+
+Forcefully terminate the process using the kill command with SIGKILL: kill -SIGKILL <PID>.
+
+Check the status of the processes with jobs command.
+
+Additional Practice:
+
+Create another process in the foreground: sleep 24242
+
+Stop with Ctrl+Z.
+
+Attempt to start this stopped process with SIGCONT %<jobID>.
+
+Check the status of the processes with jobs command.
+
+Create another process in the background: sleep 25252 & .
+
+Try to gracefully terminate it using SIGTERM %<jobID>.
+
+Check the status of the processes with jobs command.
+
+Create one more process in the background: sleep 26262 &
+
+Attempt to forcefully terminate it using SIGKILL %<jobID>.
+
+Check the status of the processes with jobs command. If there left some running process kill them all.
+
+Summarize the usage of signals, emphasizing the differences between SIGCONT, SIGTERM, and SIGKILL and their respective implications on process management.
+
+Finish by echoing an inspirational message. Run : echo "Every great journey begins with a single step. Embrace each challenge as an opportunity to grow, and remember, the path to success is paved with perseverance, determination, and unwavering belief in yourself. So, keep moving forward, even when the road ahead seems daunting, for it's the journey that shapes us into the remarkable individuals we are destined to become." > inspiration_station.txt
+
+Read the inspirational message using the cat command
+

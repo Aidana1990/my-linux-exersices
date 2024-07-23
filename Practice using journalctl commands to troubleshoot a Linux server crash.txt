@@ -1,0 +1,39 @@
+As a DevOps engineer, you're responsible for maintaining the reliability and stability of the infrastructure. A Linux server under your management has recently crashed, causing service disruptions. Your task is to investigate the system logs to understand the root cause of the crash and implement measures to prevent similar incidents in the future.
+
+Tasks:
+
+Check Last Boot Messages: Use journalctl -b to examine messages from the last system boot. Analyze these messages to identify any error or warning messages that might indicate the cause of the crash.
+
+List Boots: Run journalctl --list-boots to list available boots and their corresponding IDs. Identify the ID of the last boot session.
+
+View Specific Boot Message: View messages from the last boot using journalctl -b 0, where 0 is the ID of the last boot session.
+
+View Logs for a Specific Time Period: Use journalctl --since and --until to narrow down logs to a specific time range around the crash incident.
+
+Run journalctl --since "YYYY-MM-DD HH:MM:SS" --until "YYYY-MM-DD HH:MM:SS" .
+
+Display logs from the time period starting from March 29, 2024, at 10:00:00 AM until April 29, 2024, at 8:00:00 PM.
+
+Run : journalctl --since "2024-03-29 10:00:00" --until "2024-04-29 20:00:00"
+
+View Detailed Logs: Utilize journalctl -o verbose to display logs with detailed information about each entry, providing deeper insights into system behavior leading up to the crash.
+
+Investigate Journal Storage Locations: Explore /run/log/journal and /var/log/journal to understand where the system journal is stored and its persistence characteristics. Navigate to those directories and list their contents. Note the ownership and permissions of the journal files in each directory, as well as the disk space they consume.
+
+Additional Information: You can use commands like df -h to see disk usage information, which may include details about journal storage.Understanding the journal storage locations and their persistence characteristics is crucial for managing system logs effectively and ensuring that critical information is retained even after system reboots.
+
+Make Journal Persistent:
+
+-Create the necessary directory for persistent journal storage.Typically, this is done under /var/log. Run: sudo mkdir -p /var/log/journal
+
+-Set the ownership of the journal directory to root:systemd-journal. Run: sudo chown root:systemd-journal /var/log/journal
+
+-Adjust the permissions of the directory to ensure proper access. Run: sudo chmod 2755 /var/log/journal
+
+-Restart the systemd-journald service to apply the changes and enable persistent journal storage. Run: sudo systemctl restart systemd-journald
+
+After completing these steps, your system should be configured to store journal logs persistently in the /var/log/journal directory. This ensures that critical logs are retained across system reboots, allowing for better analysis and troubleshooting of system issues.
+
+Verify Persistent Journal: Reboot the system (run : sudo reboot),. ssh again to the server, and confirm that logs are persistently stored by checking the list of boots with journalctl --list-boots command.This change in output confirms that the system has retained boot session logs across system reboots, indicating the successful persistence of the journal.
+
+Run the 'pwd' command to verify that your present working directory is /home/user

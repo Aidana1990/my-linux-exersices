@@ -1,0 +1,42 @@
+Managing Foreground and Background Processes
+
+In the realm of computing, processes are essential entities that execute tasks or programs. Foreground processes require immediate user interaction and control of the terminal, while background processes run independently without obstructing the user's workflow. Learning to manage foreground and background processes is crucial for optimizing multitasking and resource utilization in the terminal environment.
+
+Start the Process:
+
+Open a terminal and execute the command in the foreground:
+
+(while true; do echo -n "🚀 Welcome to the Adventure! " >> /tmp/fun_file; sleep 1; done)
+
+Stopping and Restarting the Process:
+
+Stop the process by pressing Ctrl + Z.
+
+Let's restart this process by typing fg and pressing Enter.
+
+Try to stop it again with Ctrl +Z
+
+Run the 'jobs' command to see the processes.
+
+Running in the Background:
+
+Let's start new process in the background , run this command:
+
+(while true; do echo -n "🎉 Let's have some Fun! " >> /tmp/fun_file2; sleep 1; done &)
+
+Observe changes in file content : tail -f /tmp/fun_file2
+
+Press Ctrl + C to terminate this process.
+
+Restart this background process in the foreground by typing fg %1 and pressing Enter.
+
+Press Ctrl + Z to stop.
+
+Run the jobs and verify that processes stopped. (When you check the list of jobs using the jobs command, terminated processes might not be displayed, as they are no longer active and have been removed from the job list. Instead, you'll likely see only the stopped processes listed.
+
+Check all the processes by running the jobs command.
+
+Run: echo ' "The only way to do great work is to love what you do!" - Steve Jobs' >> quote.txt
+
+Read this file .
+

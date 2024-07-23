@@ -1,0 +1,41 @@
+As a system administrator, you need to ensure proper log file rotation, monitor log files in real-time for any new entries, analyze syslog entries for troubleshooting purposes, and simulate sending syslog messages with different severity levels to test the logging infrastructure.
+
+Access the Platform CLI: Open your cmd in your computer and establish a connection to your Platform CLI using SSH. Replace "your-username" and "your-ip-address" with your actual Platform CLI username and IP address. ssh your-username@your-ip-address
+
+Open your Platform CLI: also ssh to the server as you usually do.
+
+Monitor Log File in Real-Time: In your local machine's terminal (cmd), run the following command to monitor the log file in real-time : sudo tail -f /var/log/auth.log. This command will display new log entries in real-time as they are written to the /var/log/auth.log file on the Platform CLI.
+
+Check Log File Size and Rotation Settings: In your Platform CLI run the command to check the size of the auth.log file and review log rotation settings.
+
+ls -l /var/log/auth.log .This command lists detailed information about the auth.log file located in the /var/log directory. The output typically includes details such as file permissions, owner, group, file size, and last modified timestamp
+
+cat /etc/logrotate.conf . This command displays the contents of the main logrotate configuration file located at /etc/logrotate.conf. The logrotate.conf file contains global configuration settings for log rotation, such as default rotation intervals, compression options, and post-rotation actions. The output will show the contents of this file.
+
+cat /etc/logrotate.d/* . This command displays the contents of all files within the /etc/logrotate.d directory. In most Linux distributions, additional log rotation configuration files are stored in this directory. Each file typically contains log rotation settings specific to individual log files or applications. The * wildcard is used to match and display the contents of all files in the directory.
+
+Trigger Log Rotation Manually: Manually trigger log rotation for the auth.log file using the logrotate command. sudo logrotate -vf /etc/logrotate.conf . Simultaneously, observe the real-time updates in your local machine's terminal where you're monitoring the log file.
+
+Verify Log Rotation: Confirm log rotation by running the following command in the Platform CLI to check the changes in log file names and sizes. ls -l /var/log/auth*
+
+Practice Sending Syslog Messages: Use the logger command to send syslog messages with different severity levels in the Platform CLI:
+
+sudo logger -p local7.emerg "Emergency: System crash imminent." This command will simulate sending an emergency message indicating that a system crash is imminent.
+
+This command will generate a syslog message with an emergency severity level. In this context, we're simulating a scenario where the system is about to crash imminently.
+
+By executing this command, you'll generate a syslog message indicating an emergency situation, which would typically trigger immediate attention and response from system administrators. This allows you to observe how the logging infrastructure handles messages of different severity levels and how they are displayed in the log files or system monitoring tools.
+
+Observe Real-Time Updates: While performing actions in the Platform CLI, observe your local terminal (cmd) where you're monitoring the log file in real-time. You should see new log entries appearing as you trigger log rotation, send syslog messages, or perform other actions that generate log entries. In Step 3, you've already run the command sudo tail -f /var/log/auth.log. Ensure that it remains open to continuously monitor the log file for updates.
+
+Verify Results:
+
+Verify that the actions you performed in the Platform CLI generate the expected log entries and severity levels in real-time on your local machine's terminal where you're monitoring the log file
+
+Exit and Cleanup:
+
+Once you've completed the exercise, exit the real-time monitoring session (Ctrl+C) in your local machine's terminal and type exit in the Platform CLI to close the SSH connection.
+
+Confirm that you're back in your home/user/ directory in the Platform CLI by running the pwd command.
+
+

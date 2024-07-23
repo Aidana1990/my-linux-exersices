@@ -1,0 +1,27 @@
+Greetings, Cyber Adventurer! In this quest, you'll venture into the "secure_data" directory to safeguard valuable information. Your mission is to strategically adjust permissions for three vital files: "confidential.txt", "top_secret.doc", and "classified.pdf". Only by mastering the numeric method can you shield this data from unauthorized access!
+
+Instructions:
+
+Begin your cybersecurity quest by accessing the "secure_data" directory in /home/user directory through your cyber terminal.
+
+Navigate to the "secure_data" directory and list its contents.
+
+Utilize the numeric method to fortify permissions for each file:
+
+For the file "confidential.txt":
+
+Grant the owner read and write access (6), allow the group to read (4), and lock out all others (0).
+
+For the file "top_secret.doc":
+
+Provide read and write privileges to the owner and group (6), while barring access to outsiders (0).
+
+For the file "classified.pdf":
+
+Enable the owner to read and execute (5), offer read-only access to the group (4), and maintain strict restrictions against unauthorized users (0).
+
+Use "sudo" to execute commands with root privileges.
+
+Once you've established your security measures, confirm the integrity of your permission settings with a thorough scan.
+
+Command: ls -l

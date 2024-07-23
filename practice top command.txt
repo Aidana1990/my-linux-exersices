@@ -1,0 +1,111 @@
+Open a terminal window on your system.
+
+Type top and press Enter.
+
+Observe the information displayed. You'll see something like this:
+
+top - 14:28:05 up 1 day, 3:14, 2 users, load average: 0.08, 0.03, 0.05
+
+Tasks: 129 total, 1 running, 128 sleeping, 0 stopped, 0 zombie
+
+%Cpu(s): 1.0 us, 0.3 sy, 0.0 ni, 98.7 id, 0.0 wa, 0.0 hi, 0.0 si, 0.0 st
+
+KiB Mem : 4045060 total, 1875652 free, 1240516 used, 926892 buff/cache
+
+KiB Swap: 2097148 total, 2097148 free, 0 used. 2653548 avail Mem
+
+PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND
+
+2825 user 20 0 189188 11916 8396 S 3.0 0.3 0:01.00 top
+
+1 root 20 0 225336 9704 6372 S 0.0 0.2 0:02.89 systemd
+
+2 root 20 0 0 0 0 S 0.0 0.0 0:00.02 kthreadd
+
+Let's break down the output of the top command line by line:
+
+Header Line (top):
+
+This line displays the current time, system uptime, number of logged-in users, and the system load averages for the last 1, 5, and 15 minutes.
+
+Task Information Line (Tasks):
+
+This line provides a summary of the total number of tasks/processes, broken down by their current state:
+
+total: Total number of processes currently being managed by the system.
+
+running: Number of processes currently running.
+
+sleeping: Number of processes waiting for an event to complete.
+
+stopped: Number of processes that have been stopped (usually by a signal).
+
+zombie: Number of processes that have terminated, but their exit status has not yet been retrieved by their parent process.
+
+CPU Usage Line (%Cpu(s)):
+
+This line presents a summary of CPU usage statistics:
+
+%us: Percentage of CPU time spent running user processes.
+
+%sy: Percentage of CPU time spent running system (kernel) processes.
+
+%ni: Percentage of CPU time spent running processes with a manually set nice value.
+
+%id: Percentage of CPU time spent idle.
+
+%wa: Percentage of CPU time spent waiting for I/O operations to complete.
+
+%hi: Percentage of CPU time spent servicing hardware interrupts.
+
+%si: Percentage of CPU time spent servicing software interrupts.
+
+%st: Percentage of CPU time stolen from this virtual machine by the hypervisor.
+
+Memory Usage Line (KiB Mem and KiB Swap):
+
+This line provides memory usage statistics:
+
+KiB Mem: Total physical memory (RAM) and its usage breakdown.
+
+KiB Swap: Total swap space and its usage breakdown.
+
+Process List Header (PID USER PR NI VIRT RES SHR S %CPU %MEM TIME+ COMMAND):
+
+This line serves as the header for the process list and defines each column's meaning:
+
+PID: Process ID.
+
+USER: Username of the process owner.
+
+PR: Priority of the process.
+
+NI: Nice value of the process.
+
+VIRT: Virtual memory used by the process.
+
+RES: Resident memory size of the process.
+
+SHR: Shared memory size of the process.
+
+S: Process status (S=sleeping, R=running, Z=zombie, etc.).
+
+%CPU: Percentage of CPU usage by the process.
+
+%MEM: Percentage of memory usage by the process.
+
+TIME+: CPU time consumed by the process.
+
+COMMAND: Command or name of the process.
+
+Process List:
+
+Below the header line, top lists the processes currently running on the system. Each line represents a single process, with information displayed in columns as defined by the header.
+
+Notice how the information updates in real-time.
+
+Understanding these lines will give you a comprehensive view of the system's current state and resource usage.
+
+Press q to quit top and return to the terminal prompt.
+
+Run the 'pwd ' command .

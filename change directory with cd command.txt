@@ -1,0 +1,16 @@
+Greetings!
+
+Let's understand the cd command . Imagine a house with different rooms, so the rooms are directories.
+
+To move around this house, we'll use a special command called cd , which stands for "change directory". It's like a magic key that helps us jump from one place to another.
+
+Step 1: Open your terminal and type 'cd / 'to go to the root directory. Execute the 'ls' command to view the contents of your current directory.
+
+Step 2 : Locate the directory named 'usr', often referred to as the kitchen, and navigate into it. You can use the Tab key for directory name completion. For example, type 'us' and press Tab to complete it to 'usr/'. List the contents of the kitchen directory using the 'ls' command.
+
+Step 3: Now, transition to the directory known as 'local', akin to a garden, using the 'cd' command. Explore its contents using the 'ls' command.
+
+Step 4 : Within this garden directory, discover the hidden box named 'etc'. Traverse into it using the 'cd' command.
+
+Step 5 : Confirm your current location within the 'etc' directory by utilizing the 'pwd' command. The output should display 'usr/local/etc'.
+

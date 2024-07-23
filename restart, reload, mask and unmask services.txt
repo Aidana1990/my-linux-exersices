@@ -1,0 +1,42 @@
+Gain practical experience in managing the ssh service in Linux using systemctl commands: restarting, reloading, masking, and unmasking.
+
+Understanding Restart: Restarting the ssh service involves stopping it completely and then starting it again.
+
+Check the current status of the ssh service with sudo systemctl status ssh
+
+Restart the ssh service using sudo systemctl restart ssh
+
+Confirm if the service has restarted successfully by checking its status : sudo systemctl status ssh
+
+Understanding Reload: Reloading the ssh service involves applying changes to its configuration without interrupting its operation.
+
+Make changes to the configuration file of ssh. Use your preferred text editor to open the SSH configuration file : vim /etc/ssh/sshd_config
+
+For example, let's change the SSH port from the default port 22 to a custom port, such as 2222.
+
+Find the line that specifies the SSH port (usually Port 22).
+
+Change it to Port 2222.
+
+After making the necessary modifications, save the changes and exit the text editor.
+
+Once you've saved the changes to the configuration file, you can reload the ssh service to apply the new configuration without interrupting its operation. Use the following command: sudo systemctl reload ssh
+
+Finally, verify that the changes have been successfully applied by checking the status of the ssh service: systemctl status ssh
+
+Ensure that there are no errors reported and that the service is running normally.
+
+Masking and Unmasking the rsyslog Service: Masking the ssh service prevents accidental starting and conflicts with other services.
+
+Stop the ssh service with sudo systemctl stop ssh
+
+Mask the ssh service using sudo systemctl mask ssh
+
+Attempt to start the masked service and observe the failure.
+
+Unmask the ssh service with sudo systemctl unmask ssh and start it again.
+
+Check status again, it should be running.
+
+Run the 'pwd' command.
+

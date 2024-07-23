@@ -1,0 +1,77 @@
+Systemd plays a crucial role in managing the boot process, system services, and dependencies on modern Linux distributions. This exercise aims to provide you with practical experience in exploring systemd targets and understanding their significance in system boot and management.
+
+To start become the root user using sudo su .
+
+Step 1: Explore Available Targets:
+
+Navigate to Target Directory: cd /usr/lib/systemd/system
+
+List Targets: ls -ltr
+
+Explanation: This step allows you to view available systemd target files and their purposes. Systemd targets represent different system states or levels of operation, such as booting into a graphical user interface (GUI) or a minimal rescue environment.
+
+Step 2: Examine Specific Targets:
+
+rescue.target:
+
+Purpose: The rescue target provides a minimal environment for system rescue or emergency mode. It is used when the system encounters critical issues and needs troubleshooting or maintenance.
+
+Configuration: The rescue target includes only essential services required for system maintenance, such as basic file system access and networking. It omits non-essential services to expedite recovery efforts.
+
+Run: ls -ltr rescue.target
+
+multi-user.target:
+
+Purpose: The multi-user target represents the standard multi-user system state without a graphical user interface (GUI). It is typically used for server environments or headless systems where users interact with the system via command-line interfaces.
+
+Configuration: The multi-user target initializes services necessary for normal system operation in a multi-user environment. These services may include networking, system logging, and user authentication.
+
+Run: ls -ltr multi-user.target
+
+reboot.target:
+
+Purpose: The reboot target initiates a system reboot, instructing the system to restart and reload all necessary services and configurations.
+
+Configuration: The reboot target does not directly include any services or configurations. Instead, it triggers the system's reboot sequence, ensuring a clean restart of the operating system.
+
+Run: ls -ltr reboot.target
+
+poweroff.target:
+
+Purpose: The poweroff target initiates a system shutdown, instructing the system to power off or halt its operation safely.
+
+Configuration: Similar to the reboot target, the poweroff target does not include any specific services or configurations. Instead, it triggers the shutdown sequence, allowing the system to gracefully shut down all running processes and peripherals before powering off.
+
+Run: ls -ltr poweroff.target
+
+Analysis: Review the output to understand the properties and configurations of specific targets. Understanding systemd targets aids in managing system behavior and troubleshooting effectively.
+
+Step 3: To list the dependencies of any target, you can use the command: systemctl list-dependencies graphical.target (replace graphical.target with the name of the target you want to inspect).
+
+When you list the dependencies of a systemd target using the systemctl list-dependencies command, you get a hierarchical view of the units that are required for the target to activate successfully. Here's how to interpret the output:
+
+Unit Name: Each line in the output represents a unit (service, socket, mount, etc.) that the target depends on.
+
+Type: The type of unit is indicated in parentheses after the unit name. For example, (service) indicates a systemd service unit.
+
+Dependency Type: Dependencies can be either requires or wants.
+
+Requires: Units marked as requires are essential for the target. If a required unit fails or is unavailable, the target will fail to activate.
+
+Wants: Units marked as wants are optional dependencies. The target can still activate even if a wants dependency fails.
+
+Color Indicators: In the output, colored dots to the left of each entry indicate the status of the unit.
+
+Green: Indicates that the unit is active and running successfully.
+
+White: Indicates that the unit is inactive or not running.
+
+Red: Indicates that the unit failed to start due to a fatal error.
+
+By examining systemd target dependencies, you can understand the critical components required for a particular system state or operation. This knowledge helps in troubleshooting issues related to system boot, service activation, and overall system stability.
+
+Run 'q' to exit.
+
+By exploring systemd targets, you gain insight into how the system boots and operates in various states, allowing for better system management and troubleshooting.
+
+Now to inspire yourself during the exploration, run : echo "You have the power to shape your own future. Keep pushing forward and never give up!".

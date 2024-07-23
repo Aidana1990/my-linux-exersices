@@ -1,0 +1,20 @@
+You are a system administrator responsible for backing up critical system configuration files on a Linux server. One of your tasks is to create a compressed archive of the "/etc" directory, which contains important configuration files for various system services.
+
+Start by becoming the root user using the 'sudo su' command.
+
+Use the tar command to create a tar archive named "etcbackup.tar" of the "/etc" directory: tar -cvf /root/etcbackup.tar /etc
+
+Use the ls command to list the created tar archive, paying attention to the file size: ls -ltr /root/etcbackup.tar
+
+Use the du command to check the disk usage of the tar archive: du -sk /root/etcbackup.tar
+
+Once the tar archive is created, you proceed to compress it using gzip compression method to save disk space : gzip /root/etcbackup.tar
+
+Use the ls command to list the compressed gzip file and compare its size: ls -ltr /root/etcbackup.tar.gz
+
+Check the disk usage of the compressed file in kilobytes using the du command to quantify the reduction in size achieved by compression: du -sk /root/etcbackup.tar.gz
+
+Analyze the results and confirm that the size of the compressed archive is significantly smaller compared to the uncompressed tar file, demonstrating the effectiveness of compression in optimizing storage space.
+
+List the compressed file use 'ls' command.
+

@@ -1,0 +1,28 @@
+You are responsible for managing user accounts on a Linux server. You have received a request to add several users to a specific group called "developers."
+
+Open Terminal
+
+Create Users:
+
+Alice (Username: alice)
+
+Bob (Username: bob)
+
+Carol (Username: carol)
+
+Create the "developers" group using the groupadd command.
+
+Add Users to the "developers" Group:
+
+Use the usermod command with the -aG options to add each user to the "developers" group.
+
+The syntax : usermod -aG <groupName> <userName>. Replace <groupName> with "developers" and <userName> with the username of each user.
+
+Verify that the users have been added to the "developers" group using the getent command: getent group developers. (its'not in the lecture, but it's good to know)
+
+Optionally, you can verify the group membership for each user individually using the groups or id command: groups alice or
+
+id alice (for your information)
+
+Verify Carol's group membership using the groups command. This command should display the groups to which Carol belongs.
+

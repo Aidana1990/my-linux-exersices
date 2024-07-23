@@ -1,0 +1,43 @@
+You are a junior member of a DevOps team responsible for managing the server infrastructure of a company. Your team utilizes systemd service units to control various services running on the servers. In this exercise, you will familiarize yourself with systemd service units and perform basic checks on the services.
+
+List Service Units: Execute the command systemctl list-units --type=service to list all service units on the server. Pay attention to the UNIT, LOAD, ACTIVE, SUB, and DESCRIPTION columns.
+
+UNIT: This column displays the names of the service units. Each service unit represents a specific service or application managed by systemd.
+
+LOAD: The LOAD column indicates whether the systemd daemon successfully loaded the unit's configuration into memory. A value of "loaded" indicates that the unit's configuration was successfully loaded.
+
+ACTIVE: The ACTIVE column represents the high-level activation state of the unit. It indicates whether the unit is currently active or inactive. An active unit typically means that the service is running.
+
+SUB: The SUB column represents the low-level activation state of the unit. It provides more detailed information about the unit's current state, such as "running", "exited", "failed", etc.
+
+DESCRIPTION: This column provides a brief description of each service unit. It often includes information about the purpose or function of the service.
+
+Check Service Units Status: Use the command systemctl without any arguments to list all units that are both loaded and active. Observe the list of active services running.
+
+List Installed Unit Files: Run systemctl list-unit-files --type=service to see all installed unit files on the server. Here's an explanation of each state field value:
+
+Enabled:
+
+Meaning: Units with the "enabled" state will be started automatically during system startup. This is useful for essential services that need to be available as soon as the system is booted.
+
+Disabled:
+
+Meaning: Units with the "disabled" state will not be started automatically during system startup. This is useful for services that are not required to run all the time or for services that need manual intervention to start.
+
+Static:
+
+Meaning: Units with the "static" state have their configurations set in such a way that they cannot be modified using systemctl commands. These units are typically managed by the system and are not meant to be modified manually.
+
+Masked:
+
+Meaning: Units with the "masked" state are forcefully disabled to prevent them from being started. This is typically done to prevent accidental activation of critical services or to prevent specific services from running altogether.
+
+Check SSH Service Status: Verify the status of the SSH service (ssh.service) using systemctl status ssh.service. Observe its current state, including whether it's active or inactive, and any relevant logs or errors.
+
+
+5. Verify SSH Service Activity: Use the command systemctl is-active ssh.service to confirm whether the SSH service is active or running. This command checks the current status of the SSH service and indicates whether it is actively running or not. Record the output to ensure that remote access to the server remains available for authorized users.
+
+Check SSH Service Enabled Status: Check if the SSH service is enabled for automatic startup upon server boot using systemctl is-enabled ssh.service. This command checks whether the SSH service is set to start automatically when the system boots up.
+
+List Failed Service Units: To identify any failed service units, execute the command systemctl --failed --type=service.
+

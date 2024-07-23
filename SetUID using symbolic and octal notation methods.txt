@@ -1,0 +1,78 @@
+You and your team of intrepid adventurers find yourselves trapped in the ancient and mysterious Enchanted Castle. Legend has it that within its walls lies a treasure of unimaginable wealth, guarded by puzzles and traps devised by a powerful wizard.
+
+As you explore the castle's twisting corridors and hidden chambers, you stumble upon a series of locked doors, each blocking your path to freedom and riches. But fear not! You possess the knowledge of SetUID, a magical spell that can unlock these doors and reveal the secrets within.
+
+With only your wits and courage to guide you, you must solve the castle's mysteries, set SetUID on the enchanted artifacts you find, and claim the treasure before it's too late!
+
+Task 1: Unlocking a Door with SetUID (Symbolic Notation):
+
+Imagine you encounter a locked door with a file named key_unlocker.txt nearby. To unlock the door using SetUID with symbolic notation, follow these steps:
+
+Create the Unlocker Program:
+
+Open a terminal window.
+
+Create directory 'setuid_escape_room' in your /home/user directory. Navigate to the setuid_escape_room directory.
+
+Create the unlocker program key_unlocker.txt using a text editor such as nano or vim.
+
+Write the script for the unlocker program. For instance: echo "Unlocking the door with the power of SetUID!"
+
+Save the file and exit the text editor.
+
+After creating this file set this timestamp to this file: April 30, 2024 12:00:00 . ( touch -d "2024-04-30 12:00:00" key_unlocker.txt).
+
+Set SetUID Permission:
+
+Set the SetUID permission on the key_unlocker.txt file using symbolic notation. Use the following command: u+s.
+
+Explanation: u+s: This symbolic notation sets the SetUID permission for the user (owner) of the file. It ensures that when someone runs key_unlocker, it will execute with the privileges of the owner of the file, enabling them to unlock the enchanted door.
+
+Type 'ls -l filename.txt' to see the file with it's permissions.
+
+Explanation of the output : -rwSrw-r--: This part represents the file permissions. Here's what each character signifies:
+
+The first character - indicates that it's a regular file.
+
+The next three characters rwS indicate the permissions for the file owner. In this case, the owner has read (r) and write (w) permissions, and the SetUID (S) bit is set.
+
+The next three characters rw- indicate the permissions for the group. In this case, the group has read (r) and write (w) permissions, but no execute permission (-).
+
+The last three characters r-- indicate the permissions for others (users not in the owner's group). In this case, others have only read (r) permission, but no write (w) or execute permission (-).
+
+1: This number represents the number of hard links to the file. In this case, there is only one hard link to key_unlocker.txt.
+
+user user: These two fields represent the file owner and group owner, respectively. In this case, both the owner and group owner of the file are named user.
+
+52: This number represents the size of the file in bytes. key_unlocker.txt has a size of 52 bytes.
+
+Apr 30 2024: This part indicates the date and time when the file was last modified. In this case, it was last modified on April 30, 2024.
+
+Task 2: Unlocking a Door with SetUID (Octal Notation):
+
+Alternatively, suppose you find a locked door with a file named door_unlocker.txt nearby. To set SetUID on this file using octal notation, follow these steps:
+
+Create the Unlocker Program:
+
+Open a terminal window.
+
+Navigate to the directory /setuid_escape_room where you want to create the unlocker program.
+
+Create the unlocker program door_unlocker.txt using a text editor such as nano or vim.
+
+Write the script for the unlocker program. For instance:
+
+echo "Unlocking the door with the power of SetUID!"
+
+Save the file and exit the text editor.
+
+After creating the file, use the touch command with the -d option to set the desired timestamp: April 30, 2024 12:00:00.
+
+Set SetUID Permission:
+
+Set the SetUID permission on the door_unlocker.txt file using octal notation. Use the following command: 4755.
+
+Explanation: 4755: This octal notation sets the SetUID permission for the owner of the file. It ensures that when someone runs door_unlocker, it will execute with the privileges of the owner of the file, enabling them to unlock the enchanted door.
+
+List the /setuid_escape_room directory with its permissions for these two files. Run: ls -l /home/user/setuid_escape_room | awk '{print $1, $9}'
+

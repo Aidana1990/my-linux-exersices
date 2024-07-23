@@ -1,0 +1,44 @@
+Scenario 1: You are a secret agent working on a mission to infiltrate an enemy base. Your task is to delete a top-secret document before it falls into the wrong hands.
+
+Make sure you're in /home/user directory. Create a file named top_secret_document.txt in the /home/user/ directory.
+
+Use the rm command to remove the file top_secret_document.txt. Type ' ls ' to check.
+
+
+Scenario 2: You are exploring an abandoned ghost town and find an empty building. Your task is to clean up the area by removing the empty building.
+
+Create an empty directory named abandoned_building. Type ' ls ' to check.
+
+Use the rmdir command to remove the empty directory abandoned_building. Type ' ls ' to check.
+
+Scenario 3: You are on an adventure in a dense jungle and stumble upon an abandoned campsite with two tents. Your task is to clean up the campsite by removing the tents and all their contents.
+
+Create a directory named campsite. Type ' ls ' to check.
+
+Change directory to campsite, inside of it create two subdirectories named tent1 and tent2.Type ' ls ' to check.
+
+Inside tent1/ subdirectory, create a file backpack.txt and inside tent2/ subdirectory create file map.jpg. Go ahead and check their creation with ls command. . Use the Tab Key.
+
+Change you location to the previous directory, which is /home/user.
+
+Use the rm -r command to remove the directory campsite and all its contents. Type ' ls ' to check. Nothing left.
+
+Scenario 4: You are on a space exploration mission and encounter a malfunctioning space station. Your task is to investigate the issue and report back, leaving any important data intact.
+
+Create a directory named space_station in /home/user/ directory
+
+. Type ' ls ' to check.
+
+Inside space_station, create two log files (space_station_mission_data_1.txt and space_station_mission_data_2.txt) containing important mission data. Type ' ls -l ' to check if files are created.
+
+Attempt to remove the space_station directory using the rm -rf command, without confirmation prompts.
+
+Ensure that the log files (space_station_mission_data_1.txt and space_station_mission_data_1.txt) remain intact within the space_station directory after the removal attempt. Run ls space_station. Nothing there!
+
+Congratulations! You've done an excellent job right up to the end! Now, let's confirm that your current working directory is /home/user.
+
+Notes:
+
+Exercise caution when using the rm -rf command, as it can lead to permanent deletion of files and directories.
+
+Double-check your commands before executing them to avoid accidental data loss.

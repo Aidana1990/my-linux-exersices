@@ -1,0 +1,90 @@
+The less command is a versatile tool for viewing and navigating through text files on the command line.
+
+Welcome, brave DevOps explorer, to the Log Explorer Quest! Your mission, should you choose to accept it, is to embark on an epic journey through the mystical system log file "system_log.txt". Prepare yourself for a thrilling adventure filled with system events, warnings, errors, and mysterious messages waiting to be uncovered! Step 1: Begin your quest by venturing to the home of the DevOps Guild. Run the command cd /home/user/ to reach your starting point.
+
+Step 1: Run the command cd /home/user/ to reach your starting point. .
+
+Step 2 : Begin by creating the system log file "system_log.txt" using the touch command and edit in with vim.
+
+Step 3 : Copy and paste this text into this file :
+
+[2024-03-15 08:00:00] INFO: System boot successful.
+
+[2024-03-15 08:01:12] WARNING: High CPU utilization detected, reaching 95% usage.
+
+[2024-03-15 08:05:30] ERROR: Disk space critically low on the root partition (/). Only 5% disk space remaining.
+
+[2024-03-15 08:10:45] INFO: Database service started successfully.
+
+[2024-03-15 08:15:02] ERROR: Unable to connect to the network. Check network settings.
+
+[2024-03-15 08:20:18] WARNING: System temperature above threshold. Temperature reached 80°C.
+
+[2024-03-15 08:25:36] INFO: User 'username1' logged in.
+
+[2024-03-15 08:30:51] ERROR: Application crash detected in the main application. Investigate immediately.
+
+[2024-03-15 08:35:10] WARNING: Network latency spike detected. Latency increased to 500ms.
+
+[2024-03-15 08:40:24] INFO: System shutdown initiated due to scheduled maintenance.
+
+[2024-03-15 08:45:40] ERROR: Critical hardware failure detected in the RAID controller.
+
+[2024-03-15 08:50:55] INFO: Disk cleanup completed successfully. Reclaimed 10GB of disk space.
+
+[2024-03-15 08:55:12] ERROR: Power outage detected. System switched to UPS power.
+
+[2024-03-15 09:00:29] WARNING: System clock out of sync. Time deviation of 2 minutes detected.
+
+[2024-03-15 09:05:45] INFO: Backup process started. Backing up important data to remote server.
+
+[2024-03-15 08:00:00] INFO: System boot successful.
+
+[2024-03-15 08:01:12] WARNING: High CPU utilization detected, reaching 95% usage.
+
+[2024-03-15 08:05:30] ERROR: Disk space critically low on the root partition (/). Only 5% disk space remaining.
+
+[2024-03-15 08:10:45] INFO: Database service started successfully.
+
+[2024-03-15 08:15:02] ERROR: Unable to connect to the network. Check network settings.
+
+[2024-03-15 08:20:18] WARNING: System temperature above threshold. Temperature reached 80°C.
+
+[2024-03-15 08:25:36] INFO: User 'username1' logged in.
+
+[2024-03-15 08:30:51] ERROR: Application crash detected in the main application. Investigate immediately.
+
+[2024-03-15 08:35:10] WARNING: Network latency spike detected. Latency increased to 500ms.
+
+[2024-03-15 08:40:24] INFO: System shutdown initiated due to scheduled maintenance.
+
+[2024-03-15 08:45:40] ERROR: Critical hardware failure detected in the RAID controller.
+
+[2024-03-15 08:50:55] INFO: Disk cleanup completed successfully. Reclaimed 10GB of disk space.
+
+[2024-03-15 08:55:12] ERROR: Power outage detected. System switched to UPS power.
+
+[2024-03-15 09:00:29] WARNING: System clock out of sync. Time deviation of 2 minutes detected.
+
+[2024-03-15 09:05:45] INFO: Backup process started. Backing up important data to remote server.
+
+Step 4: Save and quit.
+
+Step 5 : Type less system_log.txt. Once the log file opens in less, you'll see the system events and messages displayed.
+
+Step 6 : Press ' Ctrl+F ' or ' Space ' to move forward one window, Press' Ctrl+B ' to move backwards.
+
+Step 7 : To jump to the beginning of the file, press lowercase g, and to jump to the end, press uppercase G.
+
+Step 8 : Type n to go to the next occurrence of a searched term, or uppercase N to go to the previous occurrence.
+
+Step 9: Let's search for the term "error" within the log file. Type /ERROR and press Enter. The system will highlight occurrences of "ERROR" in the file.
+
+Step 10 : To search backward for a term, for example, "WARNING," type ?WARNING and press Enter.
+
+Step 11: Use the navigation keys to move forward or backward and observe the highlighted occurrences of the searched term.
+
+Step 12 : When you're finished exploring, press q to quit less and return to the command prompt.
+
+Step 13: Now, to complete your quest, it's time to uncover the elusive "WARNING" messages within the log file. Use your newfound knowledge to summon the command less [filename] | grep -i warning. With this incantation, the warnings shall reveal themselves, and your quest shall be complete!
+

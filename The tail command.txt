@@ -1,0 +1,24 @@
+The tail command is used to display the last part of a file (last 10 lines). It's particularly useful for viewing the end of log files, monitoring changes to files in real-time, or extracting the most recent lines from a file.
+
+Log Adventures with the Tail Command
+
+You've discovered a mysterious log file named "adventure.log" filled with secrets and surprises. Your mission is to use the tail command to uncover these mysteries and embark on an exciting adventure!
+
+Imagine yourself as an intrepid explorer ready to delve into the depths of the "adventure.log" file.
+
+Task:
+
+Step 1: Let's discover the last 5 secrets hidden in the "adventure.log" file in the /home/user directory. Example: tail -n 5 filename.
+
+Step 2: Keep an eye on the "adventure.log" file for any new discoveries. Continuously monitor changes and witness the adventure unfold in real-time. Use -f option . Press Ctrl+C for interruption.
+
+Step 3: Dig deep into the "adventure.log" file to unearth ancient secrets. Inspect the last 7 lines and record your findings. Use -n 7 option .
+
+Step 4 : Put on your detective hat and search for clues within the "adventure.log" file. Use the tail command to uncover lines containing mysterious hints.
+
+Use -n +1 [filename] | grep "mysterious"
+
+Step 5: Get ready for a thrilling adventure in the "adventure.log" file. Start monitoring changes in real-time from line 6 onwards. Use -n +6 -f filename .
+
+Step 6: Infiltrate the security logs of the "adventure.log" file and uncover any suspicious activity related to the IP address "192.168.1.100". Investigate the last 10 lines for clues. Use this option with the tail command: [filename] | grep "192.168.1.100"
+

@@ -1,0 +1,29 @@
+As a system administrator for a large organization, you oversee the security and stability of multiple servers. One day, you receive a report indicating suspicious activity within the authentication logs of a critical server. To investigate further and preserve the evidence, you decide to create a backup of the authentication logs.
+
+You start by accessing the server's log directory where the authentication logs are stored. Using the command cd /var/log, you navigate to the directory containing the log files.
+
+Once in the log directory, you inspect the contents using ls -ltr | less to identify the authentication log file. Scrolling through the list, you identify the auth.log file, which records authentication-related events. Pressing 'q' to quit.
+
+Create a backup archive of the authentication logs. Using sudo tar -cvf auth.log.tar auth.log*
+
+To ensure the successful creation of the archive, you verify its presence using ls -ltr auth.log.tar
+
+Next, you prepare a temporary storage location for the backup archive by creating a directory named backup in the /tmp directory: mkdir /tmp/backup
+
+With the backup directory in place, you move the created archive file into it using sudo mv auth.log.tar /tmp/backup
+
+Transitioning to the backup directory, you confirm the current location using cd /tmp/backup followed by pwd.
+
+To verify the integrity of the backup archive, you list its contents using ls -ltr and inspect its contents with tar -tf auth.log.tar
+
+Satisfied with the backup, you proceed to extract its contents into the current directory using tar -xvf auth.log.tar
+
+To fortify your data integrity measures, you decide to take a backup of the critical /etc directory. Employing the command sudo tar -cvf /root/etcbackup.tar /etc, you create an archive named etcbackup.tar containing the entire /etc directory and its subdirectories.
+
+To confirm the creation of the /etc backup, you list the details of the archive file with sudo ls -ltr /root/etcbackup.tar
+
+and verify its size using sudo du -sk /root/etcbackup.tar. This command displays the size of the archive file etcbackup.tar in kilobytes, allowing you to verify its size.
+
+Change your directory to the home directory and run 'pwd' to verify.
+
+

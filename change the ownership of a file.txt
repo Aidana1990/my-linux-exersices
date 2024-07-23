@@ -1,0 +1,52 @@
+Welcome to "The Ultimate Party Planning Bash"! A group of friends has come together to organize an unforgettable themed party. From decorations to playlists, each task is crucial for creating the perfect atmosphere. Let's join the party planning committee and get ready for a night to remember!
+
+Step 1: Run the 'pwd' command to verify that you are in /home/user directory. List it's contents! Find "party_planning" directory and go inside!
+
+Step 2: Now, we're inside the "party_planning" directory. Here are the tasks listed:
+
+decorations.txt
+
+playlist.txt
+
+menu.txt
+
+guest_list.txt
+
+Step 3: Now let's create participants (decorator, dj, chef,rsvp_manager) using useradd command, run with sudo if you are a normal user:
+
+Example: sudo useradd decorator.
+
+Step 4: Let's create the group named "party'_planning. Use groupadd .
+
+Step 5: Change the group ownership of the directory to "party_planning".
+
+Example: sudo chown :groupname /home/user/party_planning
+
+Step 6: Add all participants to the "party_planning" group. Example: sudo usermod -aG party_planning user1
+
+Step 7: Assign roles to each participant:
+
+Decorator: decorator:party_planning
+
+DJ: dj:party_planning
+
+Chef: chef:party_planning
+
+RSVP Manager: rsvp_manager:party_planning
+
+Example: sudo chown decorator:party_planning decorations.txt
+
+Step 8: Change ownership of each task accordingly. Since we don't have specific users assigned for each role (like in the original instructions), we'll assign ownership to the "party_planning" group for simplicity:
+
+Decorator: In charge of creating decorations.
+
+DJ: Curates the ultimate party playlist.
+
+Chef: Plans the mouth-watering menu.
+
+RSVP Manager: Manages the guest list and invitations.
+
+Example: sudo chown decorator:party_planning decorations.txt
+
+Step 9: After each ownership change, use the ls -l command to review the party planning tasks and witness their magical transformations.
+

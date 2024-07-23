@@ -1,0 +1,18 @@
+Practice creating and comparing compressed tar archives using bzip2 compression in a Linux environment.
+
+Switch to the superuser (root) using: sudo su
+
+Check if bzip2 is installed by running : which bzip2
+
+If bzip2 is not installed, install it using: sudo apt install bzip2
+
+Once installed, create a tar archive of the /etc directory with bzip2 compression: tar -cvjf /root/etcbackup.tar.bz2 /etc
+
+Observe it's filesize: ls -ltr /root/etcbackup.tar*
+
+Check the disk usage of the compressed file to compare it's size and confirm that the bz2 file is more compressed than the gz file:
+
+du -sk /root/etcbackup.tar.bz2
+
+Satisfied with the backup, list the bzip2 compressed file using the ls command to confirm its presence and completeness.
+

@@ -1,0 +1,34 @@
+The mv command in Linux is used for moving and renaming files and directories. Let's try out!
+
+Task 1: Renaming with Famous Tech References
+
+Step 1: Let's go to the /home/user directory.
+
+Step 2: Type ls to see the contents of the current directory.
+
+Step 3: Create a file called "steve_jobs_bio.txt" and run ls to see if this file is created.
+
+Step 4: Rename the file "steve_jobs_bio.txt" to "elon_musk_bio.txt" using the mv command. Use Tab key (press 'steve' + Tab) to ensure the filename is correctly typed.
+
+Step 5: Run ls elon_musk_bio.txt using Tab key to type the filename properly.
+
+Task 2: Moving for Time-Travel Adventures
+
+Step 1: Create a directory called 'TechTrove in the current directory. Type ls to see this directory in the list.
+
+Step 2: Create a file called 'QuantumLeap_Manifesto.txt' in the current directory. Type ls to check if it's created.
+
+Step 3: Let's move the file 'QuantumLeap_Manifesto.txt' to a folder called 'TechTrove/', use Tab key for completion.
+
+Step 4: Change directory to 'TechTrove' directory and type ls to check if it's moved.
+
+Task 3: Tidying Up Digital Space
+
+Step 1: Let's go back to the previous directory, which is the /home/user/ directory, where you've created files. Run cd ...
+
+Step 2: Create a new directory called 'my_docs'.
+
+Step 3: Now move all text files with '.txt' extension to a new directory called 'my_docs'. Use (asterisk)'*.txt' for all files. Don't forget to use Tab key.
+
+Step 4: Change directory to my_docs and type ls to see if all .txt files were moved.
+
